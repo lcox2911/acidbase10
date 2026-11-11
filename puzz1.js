@@ -18,7 +18,7 @@ const items = [
     id: 1,
     name: "Acid",
     description: "HCl",
-    image: "Images/acid.jpg"
+    image: "Images/acidion.jpg"
   },
   {
     id: 2,
