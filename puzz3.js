@@ -42,7 +42,7 @@ document.getElementById("ent3").addEventListener("pointerdown", function () {
     if (userAnswer === "nitric acid + potassium hydroxide"||
         userAnswer === "potassium hydroxide + nitric acid" ||
         userAnswer === "potassium oxide + nitric acid" ||
-        userAnswer === "nitric acid + potassium"
+        userAnswer === "nitric acid + potassium oxide"
     ) {
         document.getElementById("number").innerHTML = "31";
         document.getElementById("number").style.display = "block";
