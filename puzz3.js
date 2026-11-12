@@ -36,14 +36,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Question 3
+
+
 document.getElementById("ent3").addEventListener("pointerdown", function () {
-    const userAnswer = document.getElementById("ans3").value.trim().toLowerCase();
-    if (userAnswer === "nitric acid + potassium hydroxide"||
-        userAnswer === "potassium hydroxide + nitric acid" ||
-        userAnswer === "potassium oxide + nitric acid" ||
-        userAnswer === "nitric acid + potassium oxide"
-    ) {
+    const rawInput = document.getElementById("ans3").value.toLowerCase();
+    
+    // Split at "+", remove extra spaces around each part, and sort alphabetically
+    const parts = rawInput.split("+").map(part => part.trim()).sort();
+
+    // Valid pairs (must be written in alphabetical order here because of .sort())
+    const validAnswers = [
+        ["nitric acid", "potassium hydroxide"],
+        ["nitric acid", "potassium oxide"],
+        ["nitric acid", "potassium"],
+        ["nitric acid", "potassium carbonate"] // Optional: also forms potassium nitrate
+    ];
+
+    // Check if the user's two sorted parts match any valid pair
+    const isCorrect = parts.length === 2 && validAnswers.some(
+        pair => pair[0] === parts[0] && pair[1] === parts[1]
+    );
+
+    if (isCorrect) {
         document.getElementById("number").innerHTML = "31";
         document.getElementById("number").style.display = "block";
         document.getElementById("Qtn3").style.display = "none";
