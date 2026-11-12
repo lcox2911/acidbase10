@@ -39,8 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Question 3
 document.getElementById("ent3").addEventListener("pointerdown", function () {
     const userAnswer = document.getElementById("ans3").value.trim().toLowerCase();
-    const correctAnswer = "nitric acid + potassium hydroxide";
-    if (userAnswer === correctAnswer) {
+    if (userAnswer === "nitric acid + potassium hydroxide"||
+        userAnswer === "potassium hydroxide + nitric acid" ||
+        userAnswer === "potassium oxide + nitric acid" ||
+        userAnswer === "nitric acid + potassium"
+    ) {
         document.getElementById("number").innerHTML = "31";
         document.getElementById("number").style.display = "block";
         document.getElementById("Qtn3").style.display = "none";
